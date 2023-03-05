@@ -1,6 +1,5 @@
 # practice_c
 
-
 ## vim shortcuts 
 
 * syntax colors:
