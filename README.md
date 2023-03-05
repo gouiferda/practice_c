@@ -1,6 +1,6 @@
 # practice_c
 
-### vim shortcuts 
+## vim shortcuts 
 
 - syntax colors:
 ``` escape key, then type :syntax on, then enter ```
@@ -11,7 +11,7 @@
 - indent your code (reformat):
 ``` escape key, then type gg=G```
 
-### ft_print_comb.c 
+## ft_print_comb.c 
 
 ```
 gcc ft_print_comb.c
