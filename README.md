@@ -1,5 +1,6 @@
 # practice_c
 
+
 ## vim shortcuts 
 
 * syntax colors:
@@ -10,7 +11,6 @@
 
 * indent your code (reformat):
 ``` escape key, then type gg=G```
-
 
 ## ft_print_comb.c 
 
