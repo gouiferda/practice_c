@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_comb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgouifer <sgouifer@42.fr>                    +#+  +:+       +#+        */
+/*   By: sgouifer <sgouifer@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 16:55:54 by sgouifer          #+#    #+#             */
 /*   Updated: 2023/03/06 23:16:59 by sgouifer         ###   ########.fr       */
