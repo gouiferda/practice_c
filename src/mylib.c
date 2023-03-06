@@ -32,3 +32,7 @@ void ft_print_comb(){
 		i++;
 	}
 }
+
+void test(){
+	ft_putchar('f');
+}
