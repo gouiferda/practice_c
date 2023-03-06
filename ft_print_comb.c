@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgouifer <sgouifer@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/06 16:55:54 by sgouifer          #+#    #+#             */
+/*   Updated: 2023/03/06 23:16:59 by sgouifer         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "unistd.h"
 
 void ft_putchar(char c){
@@ -14,7 +26,7 @@ void ft_print_comb(void){
 
 	while(i < 790){ 
 		num1 = (i % 1000) / 100;
-		num2 = (i % 100 ) / 10;	
+		num2 = (i % 100) / 10;	
 		num3 = i % 10;
 		cond1 = (num1 != num2 && num1 != num3 && num2 != num3);
 		cond2 = (num1 < num2 && num2 < num3 && num1 < num3);
@@ -35,5 +47,3 @@ int main(int ac, char **av){
 	ft_print_comb();
 	return (0);
 }
-
-
