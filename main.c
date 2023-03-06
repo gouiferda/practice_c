@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mylib.h"
-
+#include "inc/mylib.h"
 
 int main(int ac, char **av){
 	ft_print_comb();

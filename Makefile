@@ -1,40 +1,26 @@
 
-NAME = practice
-
+NAME = app
 CC = gcc
 FLAGS = -O3 -w -Wall -Werror -Wextra
-HEADERS_DIRECTORY = ./inc/
-HEADERS = ./inc/mylib.h
-INCLUDES = -I$(HEADERS_DIRECTORY) -I $(HEADERS) 
-SOURCES_DIRECTORY = ./src/
-SOURCES_LIST = main.c functions.c
-
-
-SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
-OBJECTS_DIRECTORY = objects/
-OBJECTS_LIST = $(patsubst %.c, %.o, $(SOURCES_LIST))
-OBJECTS	= $(addprefix $(OBJECTS_DIRECTORY), $(OBJECTS_LIST))
+OBJDIR = obj
+OBJECTS = $(patsubst %.c, $(OBJDIR)/%.o, $(SRCS))  
+LIBS = -lm
+HDRS = src/mylib.h
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS_DIRECTORY) $(OBJECTS)
-	@$(CC) $(FLAGS) $(INCLUDES) $(OBJECTS) -o $(NAME)
-	@echo "$(NAME):		Compiling"
+$(NAME):  $(OBJECTS)
+	@$(CC) $(FLAGS) $(LIBS) -o $(NAME)
+	@echo "$(NAME):		Compiling" 
 
-$(OBJECTS_DIRECTORY):
-	@mkdir -p $(OBJECTS_DIRECTORY)
+obj/%.o : %.c $(HDRS)
+	@$(CC) -c $(FLAGS) -o $(NAME)
 
-$(OBJECTS_DIRECTORY)%.o : $(SOURCES_DIRECTORY)%.c $(HEADERS)
-	@$(CC) $(FLAGS) -c $(INCLUDES) $< -o $@
+src/mylib.o: src/mylib.c src/mylib.h
+	@$(CC) $(FLAGS) src/mylib.c -o src/mylib.o
 
+$(OBJDIR) :
+    mkdir -p $@/
 
-clean:
-	@rm -rf $(OBJECTS_DIRECTORY)
-	@echo "$(NAME):		Cleaning"
-
-fclean: clean
-	@rm -f $(NAME)
-
-re: 
-	@$(MAKE) fclean
-	@$(MAKE) all
+clean: 
+	@rm -rf $(OBJDIR) $(NAME)
