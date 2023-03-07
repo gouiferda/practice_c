@@ -1,26 +1,21 @@
 
 NAME = app
 CC = gcc
-FLAGS = -O3 -w -Wall -Werror -Wextra
-OBJDIR = obj
-OBJECTS = $(patsubst %.c, $(OBJDIR)/%.o, $(SRCS))  
-LIBS = -lm
+FLAGS = -O3 -w -Wall -Werror -Wextra 
 HDRS = src/mylib.h
 
 all: $(NAME)
 
-$(NAME):  $(OBJECTS)
-	@$(CC) $(FLAGS) $(LIBS) -o $(NAME)
-	@echo "$(NAME):		Compiling" 
+$(NAME): main.c src/mylib.h
+	@$(CC) $(FLAGS) -o out/$(NAME) main.c src/mylib.c
+	@echo "$(NAME): Compiling" 
 
-obj/%.o : %.c $(HDRS)
-	@$(CC) -c $(FLAGS) -o $(NAME)
+clean:
+	@rm -rf obj/* out/* 
+	@echo "$(NAME): Cleaning" 
 
-src/mylib.o: src/mylib.c src/mylib.h
-	@$(CC) $(FLAGS) src/mylib.c -o src/mylib.o
+re: clean $(NAME)
 
-$(OBJDIR) :
-    mkdir -p $@/
-
-clean: 
-	@rm -rf $(OBJDIR) $(NAME)
+run: re
+	@echo "$(NAME): Running"
+	@./out/$(NAME)
