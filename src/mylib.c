@@ -1,5 +1,3 @@
-
-
 #include "unistd.h"
 
 void ft_putchar(char c){
@@ -33,6 +31,24 @@ void ft_print_comb(){
 	}
 }
 
+size_t ft_strlen(const char *str){
+	size_t i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return i;
+}
+
+void ft_putstr(const char *str){
+	size_t len = ft_strlen(str);
+	int i = 0;
+	while (i < len){
+		ft_putchar(str[i]);
+		i++;
+	}
+}
+
 void test(){
-	ft_putchar('f');
+	ft_putstr("soufiane\n");
 }

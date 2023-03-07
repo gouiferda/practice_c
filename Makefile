@@ -1,12 +1,11 @@
 
 NAME = app
 CC = gcc
-FLAGS = -O3 -w -Wall -Werror -Wextra 
-HDRS = src/mylib.h
+FLAGS = -O3 -w -Wall -Werror -Wextra  
 
 all: $(NAME)
 
-$(NAME): main.c src/mylib.h
+$(NAME): main.c
 	@echo "$(NAME): Compiling" 
 	@$(CC) $(FLAGS) -o out/$(NAME) main.c src/mylib.c
 
@@ -18,4 +17,5 @@ re: clean $(NAME)
 
 run: re
 	@echo "$(NAME): Running"
+	@echo ""
 	@./out/$(NAME)
