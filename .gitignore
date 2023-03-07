@@ -1,4 +1,4 @@
 *.c.swp
-objects/*
+obj/*
 out/*
 a.out
