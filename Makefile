@@ -18,4 +18,4 @@ re: clean $(NAME)
 run: re
 	@echo "$(NAME): Running"
 	@echo ""
-	@./out/$(NAME)
+	@./out/$(NAME) | cat -e
