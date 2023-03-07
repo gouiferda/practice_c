@@ -7,12 +7,12 @@ HDRS = src/mylib.h
 all: $(NAME)
 
 $(NAME): main.c src/mylib.h
-	@$(CC) $(FLAGS) -o out/$(NAME) main.c src/mylib.c
 	@echo "$(NAME): Compiling" 
+	@$(CC) $(FLAGS) -o out/$(NAME) main.c src/mylib.c
 
 clean:
-	@rm -rf obj/* out/* 
 	@echo "$(NAME): Cleaning" 
+	@rm -rf obj/* out/* 
 
 re: clean $(NAME)
 
